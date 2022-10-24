@@ -158,8 +158,11 @@ for ii=1:size(testing_Dshot,2)
 
 end
 
-
-[SNR_cal(CS,NS) SNR_cal(CS,DE)]
 snr1=SNR_cal(CS,NS);
 snr2=SNR_cal(CS,DE);
+
+disp(['SNR before CNN = ',num2str(snr1)])
+
+disp(['SNR after CNN = ',num2str(snr2)])
+
 

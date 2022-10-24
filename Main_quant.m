@@ -16,13 +16,14 @@ SN2=[];
 sn1=[];
 sn2=[];
 for nn=1:1
-    nn
 for mm=1:length(var1)
-    
+  mm
+
 over_sample_tx=var1(mm);
 under_sample_tx=var2(mm);
 comp_r(mm)=32*var2(mm)/var1(mm);
 
+disp(['compression ratio = ',num2str(comp_r(mm))])
 
 Data_generation %1-ADM and dequantized
 % for training
@@ -52,7 +53,9 @@ hold on
 plot(comp_r,mean(sn2,1))
 
 axis tight
-
+xlabel('Compression Ratio')
+ylabel('SNR (dB)')
+legend('SNR before CNN','SNR after CNN')
 %%
 end_time = clock;
 elapsed_time = etime(end_time,start_time1);
